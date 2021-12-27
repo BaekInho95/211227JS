@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="kor">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Object</h1>
+    <h2>Create</h2>
+    <script>
+        var coworkers = {
+            "programmer": "ino",
+            "designer": "salah"
+        };
+        document.write("programmer : " + coworkers.programmer + "<br>");
+        //object access coperater
+        document.write("designer : " + coworkers.designer + "<br>");
+        coworkers.bookkeeper = "mane";
+        document.write("bookkeeper : " + coworkers.bookkeeper + "<br>");
+        coworkers["data scientist"] = "kloop";
+        //객체 생성은 이렇게
+        document.write("data scientist : " + coworkers["data scientist"] + "<br>");
+        // 띄어쓰기가 들어간 문자열은 대괄호로 묶어준다.
+
+    </script>
+    <h2>Iterate</h2>
+    <script>
+        for (var key in coworkers) {
+            document.write(key + '<br>');
+        }
+        //coworkers라는 변수가 가지고 있는 key값을 반복한다.
+        // -> iteration
+        //배열이면 index 객체는 key
+    </script>
+    <script>
+        for (var key in coworkers) {
+            document.write(coworkers[key] + '<br>');
+        }
+    </script>
+    <script>
+        for (var key in coworkers) {
+            document.write(key + ' : ' + coworkers[key] + '<br>');
+        }
+    </script>
+    <h2>Propety & Method</h2>
+    <script>
+        coworkers.showAll = function () {
+            for (var key in this) {
+                document.write(key + ' : ' + this[key] + '<br>');
+            }
+        }
+        //var function = showAll(){}와 같다
+        //this로 자신을 매개로 하면 전역변수가 변경되도 메소드의 내용이 변하지 않는다.
+        //객체에 소속된 함수 : 메서드
+        //객체에 소속된 변수 : 프로퍼티
+        coworkers.showAll();
+    </script>
+</body>
+
+</html>
